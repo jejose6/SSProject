@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage{
-	
+	public LoginPage(WebDriver driver){
+		super(driver);
+	}
 	@FindBy(xpath="//input[@id='Email']")
 	private WebElement emailTextField;
 
@@ -15,9 +17,7 @@ public class LoginPage extends BasePage{
 	@FindBy(xpath="//span[text()='Login']")
 	private WebElement loginButton;
 	
-	public LoginPage(WebDriver driver){
-		super(driver);
-	}
+	
 
 	public WebElement getEmailTextField() {
 		return emailTextField;

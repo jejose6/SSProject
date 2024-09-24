@@ -26,12 +26,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest implements FrameWorkConstants {
 
-	/**
-	 *
-	 * @author Afshan
-	 *
-	 **/
-
 	public WebDriver driver;
 	public static ExtentSparkReporter sparkReporter;
 	public static ExtentReports reports;
@@ -58,6 +52,8 @@ public class BaseTest implements FrameWorkConstants {
 		} else if (browser.equals("Edge")) {
 			driver = new EdgeDriver();
 			Reporter.log("Edge Browser Launched", true);
+			
+			
 		}else {
 			
 			throw new InvaidBrowserNameException(browser);
@@ -86,7 +82,7 @@ public class BaseTest implements FrameWorkConstants {
 	}
 
 	@AfterClass(alwaysRun = true)
-	public void closingBrowser() {
+		public void closingBrowser() {
 		driver.close();
 		Reporter.log("Closing Browser", true);
 	}
